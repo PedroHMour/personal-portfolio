@@ -187,8 +187,213 @@ section:last-of-type {
     color: var(--cor-texto-secundario);
 }
 
-#footer a#voltar-topo {
+#footer p {
+    margin-bottom: 0.5em; /* Ajuste para o novo rodapé */
+}
+
+/* ======== NOVOS ESTILOS ADICIONADOS ABAIXO ======== */
+
+/* Estilos para a nova Seção HERO */
+#hero h4 {
     color: var(--cor-destaque);
-    display: block;
-    margin-top: 10px;
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+#hero h2 {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos para a seção Sobre (Duas Colunas) */
+.about-flex-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 3; /* Ocupa 3/5 do espaço */
+}
+
+.about-image {
+    flex: 2; /* Ocupa 2/5 do espaço */
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.about-image img {
+    border-radius: 4px;
+    border: 2px solid var(--cor-destaque);
+}
+
+.skills-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 200px));
+    gap: 10px;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.skills-list li {
+    position: relative;
+    padding-left: 20px;
+    color: var(--cor-texto-secundario);
+}
+
+.skills-list li::before {
+    content: "▹"; /* Seta como marcador */
+    position: absolute;
+    left: 0;
+    color: var(--cor-destaque);
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+
+/* Estilos para os Cards de Expertise */
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.expertise-card {
+    background-color: var(--cor-elementos-interface);
+    padding: 25px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expertise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.expertise-card h3 {
+    color: var(--cor-destaque);
+    margin-bottom: 15px;
+}
+
+
+/* Estilos para os Cards de Projeto */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--cor-elementos-interface);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    color: var(--cor-texto-principal);
+    margin-bottom: 10px;
+}
+
+.project-description {
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+.project-tech-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.project-tech-list li {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    color: var(--cor-destaque);
+}
+
+.project-links {
+    margin-top: auto; /* Empurra para o final do card */
+}
+
+.project-links a {
+    color: var(--cor-texto-principal);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+    color: var(--cor-destaque);
+}
+
+/* Estilos para a Seção de Contato */
+#contact {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact h3 {
+    color: var(--cor-destaque);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+#contact p {
+    margin-bottom: 2rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-link {
+    font-size: 1.8rem;
+    color: var(--cor-texto-principal);
+}
+.social-link:hover {
+    color: var(--cor-destaque);
+}
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .about-flex-container {
+        flex-direction: column;
+    }
+
+    .about-image {
+        margin-top: 30px;
+    }
 }
