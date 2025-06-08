@@ -12,16 +12,21 @@
 </head>
 <body>
 
+    <div id="particles-js"></div>
+
     <header id="header">
         <nav>
             <a href="#hero" class="logo">
                 <img src="images/logo pedro-02.png" alt="Pedro Henrique Developer Logo">
             </a>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+            </button>
+            <ul id="primary-navigation" class="primary-navigation">
+                <li><a href="#about">01. About</a></li>
+                <li><a href="#expertise">02. Expertise</a></li>
+                <li><a href="#projects">03. Projects</a></li>
+                <li><a href="#contact">04. Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -102,7 +107,7 @@
                         </div>
                     </div>
                 </div>
-                 </div>
+            </div>
         </section>
 
         <section id="contact">
@@ -122,6 +127,7 @@
         <p>&copy; <span id="currentYear"></span> pedrohenriquedev. All rights reserved.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/script.js" defer></script>
 </body>
 </html>

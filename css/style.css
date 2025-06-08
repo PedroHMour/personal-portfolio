@@ -7,6 +7,7 @@
     --cor-elementos-interface: #1B2A41;
     --cor-destaque: #64FFDA;
     --cor-destaque-hover: #52ccaA;
+    --header-height: 85px;
 
     --fonte-titulos: 'Montserrat', sans-serif;
     --fonte-corpo: 'Open Sans', sans-serif;
@@ -28,9 +29,7 @@ body {
     background-color: var(--cor-primaria-fundo);
     color: var(--cor-texto-principal);
     line-height: 1.6;
-    /* Ajuste para o corpo da página começar abaixo do header fixo */
-    /* A altura exata pode depender da altura final do seu header (padding + altura do logo) */
-    padding-top: 85px; /* Exemplo, ajuste fino pode ser necessário */
+    padding-top: var(--header-height);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,41 +38,19 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.75em;
 }
 
-h1 {
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 2rem;
-    color: var(--cor-destaque);
-    margin-bottom: 1em;
-}
-
-p {
-    margin-bottom: 1em;
-    color: var(--cor-texto-secundario);
-}
-
-a {
-    color: var(--cor-destaque);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--cor-destaque-hover);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; color: var(--cor-destaque); margin-bottom: 1em; }
+p { margin-bottom: 1em; color: var(--cor-texto-secundario); }
+a { color: var(--cor-destaque); text-decoration: none; transition: color 0.3s ease; }
+a:hover { color: var(--cor-destaque-hover); }
+img { max-width: 100%; height: auto; display: block; }
 
 main {
     width: 90%;
     max-width: 1100px;
     margin: 0 auto;
+    position: relative; /* Garante que o conteúdo fique sobre o fundo */
+    z-index: 2;
 }
 
 section {
@@ -82,9 +59,7 @@ section {
     border-bottom: 1px solid var(--cor-elementos-interface);
 }
 
-section:last-of-type {
-    border-bottom: none;
-}
+section:last-of-type { border-bottom: none; }
 
 .cta-button {
     display: inline-block;
@@ -105,25 +80,35 @@ section:last-of-type {
     color: var(--cor-primaria-fundo);
 }
 
+/* Efeito de fundo com Partículas */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Fica atrás de todo o conteúdo */
+}
+
+
 /* Estilos do Cabeçalho e Navegação */
 #header {
-    /* Estado Inicial (Topo da Página) */
     background-color: transparent;
-    padding: 15px 0; /* Ajustado o padding vertical para acomodar melhor o logo */
+    padding: 15px 0;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
     box-shadow: none;
-    transition: background-color 0.4s ease-out, box-shadow 0.4s ease-out, padding 0.4s ease-out; /* Adicionada transição para padding */
+    transition: background-color 0.4s ease-out, box-shadow 0.4s ease-out, padding 0.4s ease-out;
 }
 
 #header.scrolled {
-    /* Estado Após Scroll */
-    background-color: var(--cor-elementos-interface);
+    background-color: rgba(10, 25, 47, 0.85); /* Fundo com transparência */
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    padding: 10px 0; /* Padding menor quando scrollado, opcional */
+    padding: 10px 0;
 }
 
 #header nav {
@@ -132,39 +117,29 @@ section:last-of-type {
     align-items: center;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px; /* Espaçamento lateral para o conteúdo da nav */
-}
-
-/* ESTILOS DO LOGO ATUALIZADOS */
-#header .logo {
-    display: inline-block; /* Garante que o link se comporte bem */
+    padding: 0 20px;
 }
 
 #header .logo img {
-    max-height: 45px; /* Defina a altura máxima do seu logo. Ajuste conforme necessário. */
-    width: auto;      /* Mantém a proporção da imagem */
-    display: block;   /* Remove espaços extras abaixo da imagem */
-    transition: max-height 0.4s ease-out; /* Transição suave para altura do logo */
+    max-height: 45px;
+    width: auto;
+    display: block;
+    transition: max-height 0.4s ease-out;
 }
 
-/* Opcional: Diminuir o logo um pouco quando a navbar é scrollada */
-#header.scrolled .logo img {
-    max-height: 40px; /* Altura um pouco menor */
-}
+#header.scrolled .logo img { max-height: 40px; }
 
-
-#header nav ul {
+/* Estilos da Navegação Principal (Desktop) */
+.primary-navigation {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
 
-#header nav ul li {
-    margin-left: 25px;
-}
+.primary-navigation li { margin-left: 25px; }
 
-#header nav ul li a {
+.primary-navigation a {
     font-family: var(--fonte-corpo);
     color: var(--cor-texto-principal);
     text-decoration: none;
@@ -173,222 +148,114 @@ section:last-of-type {
     transition: color 0.3s ease;
 }
 
-#header nav ul li a:hover,
-#header nav ul li a.active {
-    color: var(--cor-destaque);
-}
+.primary-navigation a:hover,
+.primary-navigation a.active { color: var(--cor-destaque); }
+
+
+/* Estilos do Hero */
+#hero h4 { color: var(--cor-destaque); font-family: var(--fonte-corpo); font-size: 1rem; margin-bottom: 1rem; }
+#hero h2 { color: var(--cor-texto-secundario); margin-bottom: 1.5rem; }
+
+/* Estilos do Sobre */
+.about-flex-container { display: flex; align-items: flex-start; gap: 50px; }
+.about-text { flex: 3; }
+.about-image { flex: 2; max-width: 300px; margin: 0 auto; }
+.about-image img { border-radius: 4px; border: 2px solid var(--cor-destaque); }
+.skills-list { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(140px, 200px)); gap: 10px; padding: 0; margin-top: 20px; }
+.skills-list li { position: relative; padding-left: 20px; color: var(--cor-texto-secundario); }
+.skills-list li::before { content: "▹"; position: absolute; left: 0; color: var(--cor-destaque); font-size: 1.1rem; line-height: 1.2; }
+
+/* Estilos de Expertise */
+.expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.expertise-card { background-color: var(--cor-elementos-interface); padding: 25px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.expertise-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); }
+.expertise-card h3 { color: var(--cor-destaque); margin-bottom: 15px; }
+
+/* Estilos de Projetos */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.project-card { background-color: var(--cor-elementos-interface); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
+.project-card:hover { transform: translateY(-5px); }
+.project-image img { width: 100%; height: auto; object-fit: cover; }
+.project-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+.project-title { color: var(--cor-texto-principal); margin-bottom: 10px; }
+.project-description { color: var(--cor-texto-secundario); font-size: 0.95rem; flex-grow: 1; }
+.project-tech-list { list-style: none; padding: 0; margin: 15px 0; display: flex; flex-wrap: wrap; gap: 15px; }
+.project-tech-list li { font-family: 'Courier New', Courier, monospace; font-size: 0.8rem; color: var(--cor-destaque); }
+.project-links { margin-top: auto; }
+.project-links a { color: var(--cor-texto-principal); font-size: 1.5rem; margin-right: 15px; transition: color 0.3s ease; }
+.project-links a:hover { color: var(--cor-destaque); }
+
+/* Estilos de Contato */
+#contact { text-align: center; max-width: 600px; margin: 0 auto; }
+#contact h3 { color: var(--cor-destaque); font-size: 2.2rem; margin-bottom: 1rem; }
+#contact p { margin-bottom: 2rem; }
+.contact-links { display: flex; justify-content: center; align-items: center; gap: 20px; }
+.social-link { font-size: 1.8rem; color: var(--cor-texto-principal); }
+.social-link:hover { color: var(--cor-destaque); }
 
 /* Rodapé */
-#footer {
-    text-align: center;
-    padding: 30px 20px;
-    border-top: 1px solid var(--cor-elementos-interface);
-    font-size: 0.9rem;
-    color: var(--cor-texto-secundario);
-}
-
-#footer p {
-    margin-bottom: 0.5em; /* Ajuste para o novo rodapé */
-}
-
-/* ======== NOVOS ESTILOS ADICIONADOS ABAIXO ======== */
-
-/* Estilos para a nova Seção HERO */
-#hero h4 {
-    color: var(--cor-destaque);
-    font-family: var(--fonte-corpo);
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-#hero h2 {
-    color: var(--cor-texto-secundario);
-    margin-bottom: 1.5rem;
-}
-
-/* Estilos para a seção Sobre (Duas Colunas) */
-.about-flex-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
-}
-
-.about-text {
-    flex: 3; /* Ocupa 3/5 do espaço */
-}
-
-.about-image {
-    flex: 2; /* Ocupa 2/5 do espaço */
-    max-width: 300px;
-    margin: 0 auto;
-}
-
-.about-image img {
-    border-radius: 4px;
-    border: 2px solid var(--cor-destaque);
-}
-
-.skills-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
-    gap: 10px;
-    padding: 0;
-    margin-top: 20px;
-}
-
-.skills-list li {
-    position: relative;
-    padding-left: 20px;
-    color: var(--cor-texto-secundario);
-}
-
-.skills-list li::before {
-    content: "▹"; /* Seta como marcador */
-    position: absolute;
-    left: 0;
-    color: var(--cor-destaque);
-    font-size: 1.1rem;
-    line-height: 1.2;
-}
+#footer { text-align: center; padding: 30px 20px; border-top: 1px solid var(--cor-elementos-interface); font-size: 0.9rem; color: var(--cor-texto-secundario); }
+#footer p { margin-bottom: 0.5em; }
 
 
-/* Estilos para os Cards de Expertise */
-.expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
+/* ===== RESPONSIVIDADE E MENU HAMBÚRGUER ===== */
+.mobile-nav-toggle { display: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
-.expertise-card {
-    background-color: var(--cor-elementos-interface);
-    padding: 25px;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.expertise-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.expertise-card h3 {
-    color: var(--cor-destaque);
-    margin-bottom: 15px;
-}
-
-
-/* Estilos para os Cards de Projeto */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
-
-.project-card {
-    background-color: var(--cor-elementos-interface);
-    border-radius: 4px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.project-content {
-    padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-title {
-    color: var(--cor-texto-principal);
-    margin-bottom: 10px;
-}
-
-.project-description {
-    color: var(--cor-texto-secundario);
-    font-size: 0.95rem;
-    flex-grow: 1;
-}
-
-.project-tech-list {
-    list-style: none;
-    padding: 0;
-    margin: 15px 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.project-tech-list li {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.8rem;
-    color: var(--cor-destaque);
-}
-
-.project-links {
-    margin-top: auto; /* Empurra para o final do card */
-}
-
-.project-links a {
-    color: var(--cor-texto-principal);
-    font-size: 1.5rem;
-    margin-right: 15px;
-    transition: color 0.3s ease;
-}
-
-.project-links a:hover {
-    color: var(--cor-destaque);
-}
-
-/* Estilos para a Seção de Contato */
-#contact {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-#contact h3 {
-    color: var(--cor-destaque);
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-}
-
-#contact p {
-    margin-bottom: 2rem;
-}
-
-.contact-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.social-link {
-    font-size: 1.8rem;
-    color: var(--cor-texto-principal);
-}
-.social-link:hover {
-    color: var(--cor-destaque);
-}
-
-
-/* Responsividade para telas menores */
 @media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Altura menor para o header no mobile */
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+
+    /* Estilos do Menu Mobile */
+    .primary-navigation {
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%; /* Da direita para a esquerda */
+        flex-direction: column;
+        padding: min(20vh, 10rem) 2em;
+        gap: 2em;
+
+        background-color: rgba(10, 25, 47, 0.95);
+        backdrop-filter: blur(1rem);
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+    
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    .primary-navigation a {
+        font-size: 1.2rem;
+    }
+
+    /* Estilos do botão hambúrguer */
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        top: 2rem;
+        right: 2rem;
+        background: transparent;
+        border: 0;
+        width: 2rem;
+        aspect-ratio: 1;
+        cursor: pointer;
+        
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(100, 255, 218)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(100, 255, 218)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M6 6l18 18M6 24L24 6'/%3e%3c/svg%3e");
+    }
+
+    /* Outros ajustes de layout */
     .about-flex-container {
         flex-direction: column;
     }
