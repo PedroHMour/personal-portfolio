@@ -178,17 +178,122 @@ section:last-of-type { border-bottom: none; }
 .expertise-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); }
 .expertise-card h3 { color: var(--cor-destaque); margin-bottom: 15px; }
 
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-.project-card { background-color: var(--cor-elementos-interface); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
-.project-card:hover { transform: translateY(-5px); }
-.project-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
-.project-title { color: var(--cor-texto-principal); margin-bottom: 10px; }
-.project-description { color: var(--cor-texto-secundario); font-size: 0.95rem; flex-grow: 1; }
-.project-tech-list { list-style: none; padding: 0; margin: 15px 0; display: flex; flex-wrap: wrap; gap: 15px; }
-.project-tech-list li { font-family: 'Courier New', Courier, monospace; font-size: 0.8rem; color: var(--cor-destaque); }
-.project-links { margin-top: auto; }
-.project-links a { color: var(--cor-texto-principal); font-size: 1.5rem; margin-right: 15px; }
-.project-links a:hover { color: var(--cor-destaque); }
+/* --- ESTILOS DOS PROJETOS ATUALIZADOS --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--cor-elementos-interface);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.project-folder-icon i {
+    font-size: 2.5rem;
+    color: var(--cor-destaque);
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+}
+
+.project-links a {
+    color: var(--cor-texto-principal);
+    font-size: 1.5rem;
+}
+
+.project-links a:hover {
+    color: var(--cor-destaque);
+}
+
+.project-card-body {
+    padding: 0 20px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    color: var(--cor-texto-principal);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.project-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.project-title a:hover {
+    color: var(--cor-destaque);
+}
+
+.project-description {
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.project-card-footer {
+    padding: 0 20px 20px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+}
+
+.project-stats {
+    display: flex;
+    gap: 15px;
+}
+
+.project-stats span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.project-stats i {
+    color: var(--cor-texto-principal);
+}
+
+.project-language {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.project-language-dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+}
+/* --- FIM DOS ESTILOS DE PROJETOS --- */
+
 
 #contact { text-align: center; max-width: 600px; margin: 0 auto; }
 #contact h3 { color: var(--cor-destaque); font-size: 2.2rem; margin-bottom: 1rem; }
