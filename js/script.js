@@ -11,45 +11,39 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "landing page responsiva para escritório de advocacia, com design moderno e otimização SEO.",
             tags: ["HTML", "CSS", "Javascript"],
             repoLink: "https://github.com/PedroHMour/advocacia-lp",
-            demoLink: "https://advocacia-lp-nine.vercel.app/" 
+            demoLink: "https://advocacia-lp-nine.vercel.app/"
         },
         {
-            title: "Dashboard Financeiro SaaS",
-            description: "Plataforma web para gestão de fluxo de caixa com relatórios PDF e gráficos interativos em tempo real.",
-            tags: ["Django", "PostgreSQL", "Chart.js"],
-            repoLink: "https://github.com/PedroHMour",
-            demoLink: "https://vercel.com" 
+            title: "CodeLab Academy Landing Page",
+            description: "Landing page comercial responsiva com tema Dark Mode/Neon, animações de scroll (Intersection Observer) e micro-interações modernas.",
+            tags: ["TypeScript", "SASS", "Vite", "HTML5"],
+            repoLink: "https://github.com/PedroHMour/landing-page-codelab",
+            demoLink: "https://landing-page-codelab.vercel.app" // Substitua pelo link real do seu deploy
         },
         {
-            title: "Landing Page Otimizada",
-            description: "Site institucional focado em alta conversão. Carregamento em menos de 1 segundo e nota máxima no Google.",
-            tags: ["HTML5", "CSS3", "SEO"],
-            repoLink: "https://github.com/PedroHMour",
-            demoLink: "https://vercel.com"
+            title: "Bancada MVP - Marketplace 3D",
+            description: "Plataforma que conecta makers e clientes. Venda de arquivos digitais, produtos físicos e serviços de impressão sob demanda.",
+            tags: ["Next.js 15", "TypeScript", "Tailwind CSS", "Supabase"],
+            repoLink: "https://github.com/pedrohmour/bancada_mvp",
+            demoLink: "https://www.bancadamakeroficial.com/"
         },
-        {
-            title: "API de Monitoramento de Preços",
-            description: "Sistema que varre sites de e-commerce concorrentes e alerta sobre mudanças de preço via Telegram.",
-            tags: ["FastAPI", "Web Scraping", "Bot"],
-            repoLink: "https://github.com/PedroHMour",
-            demoLink: ""
-        }
+        
     ];
 
     /* ==========================================================================
        2. RENDERIZAÇÃO DOS PROJETOS
        ========================================================================== */
     const projectsContainer = document.getElementById('projects-grid');
-    
+
     if (projectsContainer) {
         projectsContainer.innerHTML = ''; // Limpa container
 
         myProjects.forEach(project => {
             // Gera as tags coloridas
             const tagsHtml = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
-            
+
             // Botão de Demo (Aparece desabilitado se não tiver link)
-            const demoButton = project.demoLink 
+            const demoButton = project.demoLink
                 ? `<a href="${project.demoLink}" target="_blank" class="link-demo"><i class="fas fa-external-link-alt"></i> Ver Demo</a>`
                 : `<a href="#" class="link-demo" style="background:#e2e8f0; color:#94a3b8; cursor:not-allowed;">Backend Only</a>`;
 
