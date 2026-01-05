@@ -1,53 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedro Henrique | Software Developer</title>
+    <title>Pedro Henrique | Soluções Digitais</title>
+    <meta name="description" content="Desenvolvimento de Apps, Sites, E-commerce e Automação Python.">
     
-    <meta name="description" content="Software Developer specializing in SaaS, Websites, and Python Automation.">
-    <meta name="keywords" content="Software Developer, SaaS, Websites, Python, Automation, API, Pedro Henrique">
-    <meta name="author" content="Pedro Henrique">
-
     <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="images/logo.png">
-    <link rel="apple-touch-icon" href="images/logo.png">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="parallax-wrapper">
-        <div class="parallax-layer layer-1" data-speed="-0.2"></div>
-        <div class="parallax-layer layer-2" data-speed="0.4"></div>
-        <div class="parallax-layer layer-3" data-speed="-0.6"></div>
-    </div>
-
     <header id="header">
-        <nav>
-            <a href="#hero" class="logo">
-                <img src="images/logo.png" alt="Pedro Henrique Logo">
+        <nav class="container">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="Logo Pedro Henrique">
             </a>
             
-            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-                <span class="sr-only" data-key="menu">Menu</span>
+            <button class="mobile-toggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
             </button>
             
-            <ul id="primary-navigation" class="primary-navigation">
-                <li><a href="#about" data-key="nav_about">About</a></li>
-                <li><a href="#expertise" data-key="nav_expertise">Expertise</a></li>
-                <li><a href="#projects" data-key="nav_projects">Projects</a></li>
-                <li><a href="#contact" data-key="nav_contact">Contact</a></li>
-                
-                <li class="language-selector">
-                    <a href="#" class="lang-option" data-lang="en">EN</a>
-                    <a href="#" class="lang-option" data-lang="pt">PT</a>
-                    <a href="#" class="lang-option" data-lang="fr">FR</a>
+            <ul class="nav-list">
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#projects">Portfólio</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li>
+                    <a href="https://wa.me/5592985823982" target="_blank" class="btn-nav">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -55,130 +43,178 @@
 
     <main>
         <section id="hero">
-            <div id="particles-js"></div>
+            <div class="hero-bg-animation"></div>
             
-            <div class="hero-content reveal">
-                <h4 data-key="hero_greeting">Hi, my name is</h4>
-                <h1>Pedro Henrique.</h1>
-                <h2 data-key="hero_subtitle">I build software solutions.</h2>
-                <p data-key="hero_description">Software Developer specialized in creating high-performance Websites, SaaS platforms, and Python Automations to scale your business.</p>
+            <div class="container hero-content">
+                <span class="badge-pill">🚀 Transformação Digital</span>
+                <h1>
+                    Sistemas Inteligentes, Apps e <br>
+                    <span class="text-highlight">Automação de Lucro.</span>
+                </h1>
+                <p>
+                    Do conceito ao código: desenvolvo <strong>Aplicativos Híbridos</strong>, <strong>SaaS</strong> e <strong>Robôs Python</strong> que escalam o seu negócio.
+                </p>
                 
-                <div class="hero-buttons">
-                    <a href="#projects" class="cta-button" data-key="hero_cta">Check out my projects</a>
-                    <a href="documents/PedroHenrique_CV.pdf" download="PedroHenrique_CV.pdf" class="cta-button-outline" data-key="hero_cv">Download CV</a>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">Ver Portfólio</a>
+                    <a href="https://wa.me/5592985823982" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-whatsapp"></i> Conversar Agora
+                    </a>
                 </div>
+
+                <div class="trust-indicators">
+                    <div class="indicator">
+                        <i class="fas fa-mobile-alt"></i> <span>Mobile First</span>
+                    </div>
+                    <div class="indicator">
+                        <i class="fas fa-bolt"></i> <span>Alta Performance</span>
+                    </div>
+                    <div class="indicator">
+                        <i class="fas fa-code"></i> <span>Código Limpo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Soluções Completas</h2>
+                    <p>Tecnologia sob medida para cada etapa do seu crescimento.</p>
+                </div>
+                
+                <div class="grid-services">
+                    
+                    <div class="card-service">
+                        <div class="icon-box blue"><i class="fas fa-robot"></i></div>
+                        <h3>Automações Python</h3>
+                        <p>Robôs para tarefas repetitivas, scraping de dados, bots de atendimento e automação de processos internos.</p>
+                    </div>
+                    
+                    <div class="card-service">
+                        <div class="icon-box purple"><i class="fas fa-mobile-screen-button"></i></div>
+                        <h3>Aplicativos Híbridos</h3>
+                        <p>Desenvolvimento de Apps para iOS e Android com base de código única, reduzindo custos e tempo de lançamento.</p>
+                    </div>
+                    
+                    <div class="card-service">
+                        <div class="icon-box dark"><i class="fas fa-layer-group"></i></div>
+                        <h3>Plataformas SaaS</h3>
+                        <p>Transforme sua ideia em um Software as a Service. Dashboards, gestão de usuários e pagamentos recorrentes.</p>
+                    </div>
+
+                    <div class="card-service">
+                        <div class="icon-box green"><i class="fas fa-rocket"></i></div>
+                        <h3>Landing Pages</h3>
+                        <p>Páginas de alta conversão focadas em vendas. Design persuasivo e carregamento ultrarrápido.</p>
+                    </div>
+
+                    <div class="card-service">
+                        <div class="icon-box orange"><i class="fas fa-store"></i></div>
+                        <h3>E-commerces</h3>
+                        <p>Lojas virtuais completas, integradas com gateways de pagamento e logística. Venda 24h por dia.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="bg-gray">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Projetos Recentes</h2>
+                    <p>Veja na prática o que posso construir para você.</p>
+                </div>
+                
+                <div id="projects-grid" class="grid-projects">
+                    </div>
             </div>
         </section>
 
         <section id="about">
-            <div class="content-wrapper">
-                <h2 data-key="about_title" class="section-title reveal">About Me</h2>
-                
-                <div class="about-flex-container reveal">
-                    <div class="about-text">
-                        <p data-key="about_p1">Hello! I'm Pedro, a Software Developer passionate about building digital products that live on the internet. My journey involves creating everything from responsive websites to complex automation systems.</p>
-                        <p data-key="about_p2">Today, I focus on delivering complete solutions: Websites that convert, SaaS applications that solve real problems, and backend automations that save time. I focus on clean code and scalable architecture.</p>
-                        <p data-key="about_p3">Here are a few technologies I use to build software:</p>
-                        
-                        <ul class="skills-list">
-                            <li>Python (Django/Flask)</li>
-                            <li>JavaScript (React/Node)</li>
-                            <li>SaaS Architecture</li>
-                            <li>Web Scraping</li>
-                            <li>SQL & Databases</li>
-                            <li>DevOps (Docker)</li>
-                        </ul>
-                    </div>
+            <div class="container split-layout">
+                <div class="about-text">
+                    <h2>Experiência que gera resultados</h2>
+                    <p>Sou <strong>Pedro Henrique</strong>, desenvolvedor focado em soluções que funcionam no mundo real.</p>
+                    <p>Seja criando um <strong>aplicativo</strong> para conectar seus clientes ou uma <strong>automação Python</strong> para economizar horas da sua equipe, meu objetivo é entregar ROI (Retorno sobre Investimento) através de código de qualidade.</p>
                     
-                    <div class="about-image">
-                        <img src="images/profile.png" alt="Pedro Henrique">
-                    </div>
+                    <ul class="check-list">
+                        <li><i class="fas fa-check"></i> Desenvolvimento Mobile & Web</li>
+                        <li><i class="fas fa-check"></i> Integrações de API Complexas</li>
+                        <li><i class="fas fa-check"></i> Foco em Escala e Segurança</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
-
-        <section id="expertise">
-            <div class="content-wrapper">
-                <h2 data-key="expertise_title" class="section-title reveal">Expertise</h2>
-                
-                <div class="expertise-grid">
-                    <div class="expertise-card reveal">
-                        <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-                        <h3 data-key="expertise_card1_title">Websites & SaaS</h3>
-                        <p data-key="expertise_card1_desc">Building modern, responsive websites and scalable Software as a Service (SaaS) platforms tailored to your business needs.</p>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>+10</h3>
+                        <span>Projetos</span>
                     </div>
-                    
-                    <div class="expertise-card reveal">
-                        <div class="card-icon"><i class="fas fa-robot"></i></div>
-                        <h3 data-key="expertise_card2_title">Python Automation</h3>
-                        <p data-key="expertise_card2_desc">Creating powerful bots and scripts to automate boring tasks, data entry, and complex workflows, saving you hours every day.</p>
+                    <div class="stat-card">
+                        <h3>100%</h3>
+                        <span>Prazos</span>
                     </div>
-                    
-                    <div class="expertise-card reveal">
-                        <div class="card-icon"><i class="fas fa-server"></i></div>
-                        <h3 data-key="expertise_card3_title">API Development</h3>
-                        <p data-key="expertise_card3_desc">Developing robust RESTful APIs to connect your systems, ensuring seamless data flow between your website, app, and database.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-             <div class="content-wrapper">
-                <h2 data-key="projects_title" class="section-title reveal">Projects</h2>
-                
-                <div class="projects-grid" id="projects-grid">
-                    <p style="color: var(--cor-texto-secundario);">Loading projects...</p>
                 </div>
             </div>
         </section>
 
         <section id="contact">
-            <div class="content-wrapper reveal">
-                <h2 data-key="contact_title">What's Next?</h2>
-                <h3 data-key="contact_subtitle">Get In Touch</h3>
-                <p data-key="contact_desc">Whether you have an idea for a SaaS, need a website, or want to automate a process, fill the form below!</p>
-                
-                <form action="envia-email.php" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <label for="nome">Nome / Name</label>
-                        <input type="text" id="nome" name="nome" class="form-control" placeholder="Your Name" required>
+            <div class="container">
+                <div class="contact-box">
+                    <div class="contact-content">
+                        <h2>Vamos falar sobre seu projeto?</h2>
+                        <p>Preencha o formulário para um orçamento detalhado ou me chame direto no WhatsApp.</p>
+                        
+                        <div class="contact-details">
+                            <a href="mailto:henriquesilvamoura81@gmail.com" class="detail-item">
+                                <i class="fas fa-envelope"></i> henriquesilvamoura81@gmail.com
+                            </a>
+                            
+                            <a href="https://wa.me/5592985823982" target="_blank" class="detail-item highlight">
+                                <i class="fab fa-whatsapp"></i> Iniciar Conversa no WhatsApp
+                            </a>
+                        </div>
+                        
+                        <div class="socials">
+                            <a href="https://github.com/PedroHMour" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/pedro-h-aab8a514b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" placeholder="your@email.com" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="mensagem">Mensagem / Message</label>
-                        <textarea id="mensagem" name="mensagem" class="form-control" placeholder="How can I help you?" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn-submit">ENVIAR / SEND</button>
-                </form>
-                
-                <div class="social-links-container">
-                    <a href="https://github.com/PedroHMour" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/pedro-h-aab8a514b/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                     <a href="mailto:Henriquesilvamoura81@gmail.com" class="social-link" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+
+                    <form action="https://formsubmit.co/henriquesilvamoura81@gmail.com" method="POST" class="form-modern">
+                        <input type="hidden" name="_subject" value="Novo Lead do Site!">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://seu-site.vercel.app/"> 
+
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input type="text" name="name" required placeholder="Seu nome">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" required placeholder="seu@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Projeto</label>
+                            <textarea name="message" required placeholder="Descreva brevemente sua ideia..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            SOLICITAR ORÇAMENTO
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer id="footer">
-        <p data-key="footer_credit">Designed & Built by Pedro Henrique</p>
-        <p>&copy; <span id="currentYear"></span> pedrohenriquedev</p>
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; <span id="year"></span> Pedro Henrique. Soluções Digitais.</p>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="js/script.js" defer></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
